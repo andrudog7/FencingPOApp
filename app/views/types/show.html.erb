@@ -1,0 +1,11 @@
+<h1>Add <%=@type.name%></h1>
+<%@items.each do |item|%>
+    <%=form_for @line_item do |f|%>
+        <p><%=item.description%></p>
+        <%=f.label "Quantity"%><%=f.text_field :quantity%>
+        <%=f.label "Notes"%>
+        <%=f.text_field :notes%>
+        <%=f.hidden_field :item_id, :value => item.id%>
+        <%=f.submit "Update PO"%>
+    <%end%>
+<%end%>
