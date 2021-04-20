@@ -1,0 +1,4 @@
+<h1>Purchase Order #<%=@purchase_order.id%></h1>
+<%Type.all.each do |type|%>
+    <%=link_to "Add #{type.name}", type_path(type)%><br>
+<%end%>

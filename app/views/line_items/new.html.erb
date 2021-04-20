@@ -1,0 +1,11 @@
+<div>
+    <%=form_for(@line_item) do |f|%>
+        <%=f.number :quantity%>
+        <%=f.fields_for :item, @line_item.item do |t|%>
+            <%=t.label nil, "Select Item"%>
+            <%=t.collection_select :id, Customer.all, :id, :name, :prompt => 'Select Customer'%><br><br>
+        <%end%>
+        <br>
+        <%=f.submit "Create New PO"%>
+    <%end%>
+</div>

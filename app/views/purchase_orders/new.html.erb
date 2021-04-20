@@ -1,0 +1,15 @@
+<div>
+    <h3>Create a New Purchase Order:</h3>
+    <%=form_for(@purchase_order) do |f|%>
+        <%=f.fields_for :salesman, @purchase_order.salesman do |t|%>
+            <%=t.label nil, "Select Salesman"%>
+            <%=t.collection_select :id, Salesman.all, :id, :name, :prompt => 'Select Salesman'%><br><br>
+        <%end%>
+        <%=f.fields_for :customer, @purchase_order.customer do |t|%>
+            <%=t.label nil, "Select Customer"%>
+            <%=t.collection_select :id, Customer.all, :id, :name, :prompt => 'Select Customer'%><br><br>
+        <%end%>
+        <br>
+        <%=f.submit "Create New PO"%>
+    <%end%>
+</div>
