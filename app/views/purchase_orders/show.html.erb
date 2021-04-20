@@ -2,3 +2,7 @@
 <%Type.all.each do |type|%>
     <%=link_to "Add #{type.name}", type_path(type, purchase_order: @purchase_order.id)%><br>
 <%end%>
+
+<%if @purchase_order.line_items != []%>
+    <p>Line Items Here</p>
+<%end%>

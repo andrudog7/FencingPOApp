@@ -5,15 +5,16 @@ class LineItemsController < ApplicationController
         @items = Item.all.where(:type => params[:type])
     end
 
-    def update
-        @line_item = LineItem.find(params[:id])
-        @item = Item.find(line_item_params[:item_id])
-        byebug
+    def create
+        @line_item = LineItem.create(line_item_params)
+        @line_item.calculate_total
+        @purchase_order = @line_item.purchase_order
+        render 'purchase_orders/show.html.erb'
     end
 
     private 
 
     def line_item_params
-        params.require(:line_item).permit(:item_id, :quantity, :notes)
+        params.require(:line_item).permit(:item_id, :quantity, :notes, :purchase_order_id, :type_id)
     end
 end
