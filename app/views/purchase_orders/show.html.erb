@@ -5,4 +5,5 @@
 
 <%if @purchase_order.line_items != []%>
     <p>Line Items Here</p>
+    <%=@purchase_order.line_items.first.line_total%>
 <%end%>
