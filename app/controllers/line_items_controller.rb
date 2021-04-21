@@ -12,6 +12,17 @@ class LineItemsController < ApplicationController
         render 'purchase_orders/show.html.erb'
     end
 
+    def edit 
+        @line_item = LineItem.find(params[:id])
+    end
+
+    def destroy 
+        @line_item = LineItem.find(params[:id])
+        @purchase_order = @line_item.purchase_order
+        @line_item.destroy
+        redirect_to purchase_order_path(@purchase_order)
+    end
+
     private 
 
     def line_item_params
