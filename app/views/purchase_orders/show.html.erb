@@ -14,6 +14,7 @@
                 <th>Notes</th>
                 <th>Rate</th>
                 <th>Line Total</th>
+                <th></th>
             </tr>
         </thead>
         <body>
@@ -24,6 +25,7 @@
                 <td><%=item.notes%></td>
                 <td>$<%=item.item.rate%></td>
                 <td>$<%=item.line_total%></td>
+                <td><%=link_to "Edit", edit_line_item_path(item)%></td>
             </tr>
             <%end%>
         </body>
