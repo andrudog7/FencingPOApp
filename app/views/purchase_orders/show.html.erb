@@ -4,6 +4,28 @@
 <%end%>
 
 <%if @purchase_order.line_items != []%>
-    <p>Line Items Here</p>
-    <%=@purchase_order.line_items.first.line_total%>
+    <br><br>
+    <table class = "po-table">
+        <thead>
+        <caption></caption>
+            <tr>
+                <th>Quantity</th>
+                <th>Description</th>
+                <th>Notes</th>
+                <th>Rate</th>
+                <th>Line Total</th>
+            </tr>
+        </thead>
+        <body>
+            <%@purchase_order.line_items.each do |item|%>
+            <tr>
+                <td><%=item.quantity%></td>
+                <td><%=item.item.color%> <%=item.item.description%></td>
+                <td><%=item.notes%></td>
+                <td>$<%=item.item.rate%></td>
+                <td>$<%=item.line_total%></td>
+            </tr>
+            <%end%>
+        </body>
+    </table>
 <%end%>

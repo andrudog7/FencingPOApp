@@ -6,7 +6,6 @@ class LineItem < ApplicationRecord
 
   def calculate_total
     total = self.quantity * self.item.rate
-    byebug
     self.update(line_total: total)
   end
 end

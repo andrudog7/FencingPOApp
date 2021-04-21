@@ -13,6 +13,10 @@ class PurchaseOrdersController < ApplicationController
         render 'show'
     end
 
+    def show 
+        @purchase_order = PurchaseOrder.find(params[:id])
+    end
+
     private 
 
     def purchase_order_params
