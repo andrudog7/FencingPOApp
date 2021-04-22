@@ -1,3 +1,33 @@
 // Place all the styles related to the Items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.item-table {
+    border-collapse: collapse;
+    border-radius: 5px 5px 5px 5px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    display: inline-table;
+  }
+  
+  .item-table thead tr {
+    background-color: #ffc562;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  .item-table th,
+  .item-table td {
+    padding: 4px 10px;
+  }
+  
+  .item-table tbody tr {
+    border-bottom: 1px solid lightgray;
+  }
+  
+  .item-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+  
+  .item-table tbody tr:last-of-type {
+    border-bottom: 5px solid #ffc562;;
+  }

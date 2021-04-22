@@ -1,0 +1,44 @@
+<h1><%=@item.full_description%></h1>
+<%=form_for(@item) do |f|%>
+    Color: <%=f.text_field :color%><br><br>
+    Item: <%=f.text_area :description%><br><br>
+    <%=f.submit "Update Item"%>
+<%end%>    
+    <br>
+    <h4>New Price Card</h4>
+    <%=form_for @price_card do |t|%>
+        <%=t.date_field :date%><br>
+        <%=t.label nil, "AAA Price:  "%>
+        <%=t.text_field :aaa_price, pattern: "[0-9].[0-9][0-9]"%><br>
+        <%=t.label "Daytona Price:  "%>
+        <%=t.text_field :daytona_price, pattern: "[0-9].[0-9][0-9]"%>
+        <%=t.hidden_field :item_id, :value => @item.id%><br><br>
+        <%=t.submit "Add Price Card"%>
+    <%end%>
+
+
+<h4>Previous Price Cards</h4>
+<%if @item.price_cards != []%>
+    <div>
+    <table class="item-table">
+    <thead>
+        <tr>
+        <th>Date</th>
+        <th>AAA Fencing Price</th>
+        <th>Daytona Price</th>
+        <th></th>
+        </tr>
+    </thead>
+    <body>
+        <%@item.price_cards.sort_by(&:date).reverse.each do |p|%>
+        <tr>
+        <td><%=p.date.strftime("%m/%d/%Y")%></td>
+        <td style="text-align:center;"><%=p.aaa_price%></td>
+        <td style="text-align:center;"><%=p.daytona_price%></td>
+        <td><%=link_to "Delete", price_card_path(p), :method => "Delete"%></td>
+        <%end%>
+        </tr>
+    </body>
+</table>
+    </div>
+<%end%>
