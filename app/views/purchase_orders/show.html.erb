@@ -1,7 +1,11 @@
 <h1>Purchase Order #<%=@purchase_order.id%></h1>
+<h2>Add Item</h2>
+
+<div id="category">
 <%Type.all.each do |type|%>
-    <%=link_to "Add #{type.name}", type_path(type, purchase_order: @purchase_order.id)%><br>
+    <%=link_to "#{type.name}", type_path(type, purchase_order: @purchase_order.id)%>
 <%end%>
+</div>
 
 <%if @purchase_order.line_items != []%>
     <br><br>
@@ -30,6 +34,19 @@
                 <td><%=link_to "Delete", line_item_path(item), :method => 'delete'%></td>
             </tr>
             <%end%>
+            <tr class="blank_row" style="height:25px !important">
+                <td colspan="7"></td>
+            </tr>
+                <th>Notes:</th>
+                <td><%=form_for(@purchase_order) do |f|%>
+                    <%=f.text_area :notes%>
+                <%end%></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
         </body>
     </table>
 <%end%>
+

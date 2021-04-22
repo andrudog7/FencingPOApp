@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_20_170714) do
+ActiveRecord::Schema.define(version: 2021_04_22_133557) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2021_04_20_170714) do
     t.string "sales_tax_currency", default: "USD", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "notes"
     t.index ["customer_id"], name: "index_purchase_orders_on_customer_id"
     t.index ["salesman_id"], name: "index_purchase_orders_on_salesman_id"
   end
