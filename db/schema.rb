@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_22_133557) do
+ActiveRecord::Schema.define(version: 2021_04_22_144632) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,18 @@ ActiveRecord::Schema.define(version: 2021_04_22_133557) do
     t.index ["type_id"], name: "index_line_items_on_type_id"
   end
 
+  create_table "price_cards", force: :cascade do |t|
+    t.date "date"
+    t.integer "aaa_price_cents", default: 0, null: false
+    t.string "aaa_price_currency", default: "USD", null: false
+    t.integer "daytona_price_cents", default: 0, null: false
+    t.string "daytona_price_currency", default: "USD", null: false
+    t.bigint "item_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_id"], name: "index_price_cards_on_item_id"
+  end
+
   create_table "purchase_orders", force: :cascade do |t|
     t.bigint "salesman_id", null: false
     t.bigint "customer_id", null: false
@@ -76,6 +88,7 @@ ActiveRecord::Schema.define(version: 2021_04_22_133557) do
 
   add_foreign_key "items", "types"
   add_foreign_key "line_items", "purchase_orders"
+  add_foreign_key "price_cards", "items"
   add_foreign_key "purchase_orders", "customers"
   add_foreign_key "purchase_orders", "salesmen"
 end

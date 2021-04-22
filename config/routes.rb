@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :price_cards
   resources :items
   resources :types
   resources :line_items

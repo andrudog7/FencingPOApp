@@ -1,0 +1,2 @@
+module PriceCardsHelper
+end

@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: MyString
+  aaa_price: MyString
+  daytona_price: MyString
+
+two:
+  date: MyString
+  aaa_price: MyString
+  daytona_price: MyString
