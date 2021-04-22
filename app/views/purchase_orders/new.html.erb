@@ -2,11 +2,13 @@
     <h3>Create a New Purchase Order:</h3>
     <%=form_for(@purchase_order) do |f|%>
         <%=f.fields_for :salesman, @purchase_order.salesman do |t|%>
-            <%=t.label nil, "Select Salesman"%>
             <%=t.collection_select :id, Salesman.all, :id, :name, :prompt => 'Select Salesman'%><br><br>
         <%end%>
+        <%=f.fields_for :account, @purchase_order.account do |t|%>
+            <%=t.collection_select :id, Account.all, :id, :name, :prompt => 'Select Account'%><br><br>
+        <%end%>
         <%=f.fields_for :customer, @purchase_order.customer do |t|%>
-            <%=t.label nil, "Customer"%>
+            <%=t.label nil, "Customer:  "%>
             <%=t.text_field :name%><br><br>
         <%end%>
         <br>

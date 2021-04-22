@@ -1,10 +1,12 @@
 <h1>Add <%=@type.name%> to PO #<%=@line_item.purchase_order_id%></h1>
+<p>Quantity: </p>
 <%@items.each do |item|%>
     <%=form_for @line_item do |f|%>
-        <%=f.label "Quantity"%><%=f.text_field :quantity%><p><%=item.color + " " +  item.description%></p>
-        <%=f.hidden_field :item_id, :value => item.id%>
+        <p><%=f.text_field :quantity, :size=>"2px"%><%="  " + item.color + " " +  item.description%>
+        <%=f.hidden_field :item_id, :value => item.id%></p>
         <%=f.hidden_field :type_id, :value => @type.id%>
         <%=f.hidden_field :purchase_order_id, :value => @line_item.purchase_order_id%>
         <%=f.submit "Update PO"%>
     <%end%>
+     
 <%end%>

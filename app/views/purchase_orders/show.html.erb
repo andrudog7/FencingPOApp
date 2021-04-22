@@ -1,3 +1,4 @@
+<h1><%=@purchase_order.account.name%></h1>
 <h1>Purchase Order #<%=@purchase_order.id%></h1>
 <h2>Add Item</h2>
 
@@ -28,7 +29,7 @@
                 <td><%=item.quantity%></td>
                 <td><%=item.item.color%> <%=item.item.description%></td>
                 <td><%=item.notes%></td>
-                <td>$<%=item.item.rate%></td>
+                <td>$<%=item.find_item_price(item.item)%></td>
                 <td>$<%=item.line_total%></td>
                 <td><%=link_to "Edit", edit_line_item_path(item)%></td>
                 <td><%=link_to "Delete", line_item_path(item), :method => 'delete'%></td>
@@ -38,10 +39,10 @@
                 <td colspan="7"></td>
             </tr>
                 <th>Notes:</th>
-                <td><%=form_for(@purchase_order) do |f|%>
-                    <%=f.text_area :notes%>
-                <%end%></td>
-                <td></td>
+                <%=form_for(@purchase_order) do |f|%>
+                    <td><%=f.text_area :notes%></td>
+                    <td><%=f.submit "Save Notes"%></td>
+                <%end%>
                 <td></td>
                 <td></td>
                 <td></td>

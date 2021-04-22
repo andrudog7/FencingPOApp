@@ -5,7 +5,7 @@ class LineItem < ApplicationRecord
   monetize :line_total_cents
 
   def calculate_total
-    total = self.quantity * self.item.rate
+    total = self.quantity * self.find_item_price(self.item)
     self.update(line_total: total)
   end
 
