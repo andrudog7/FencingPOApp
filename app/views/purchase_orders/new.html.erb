@@ -6,8 +6,8 @@
             <%=t.collection_select :id, Salesman.all, :id, :name, :prompt => 'Select Salesman'%><br><br>
         <%end%>
         <%=f.fields_for :customer, @purchase_order.customer do |t|%>
-            <%=t.label nil, "Select Customer"%>
-            <%=t.collection_select :id, Customer.all, :id, :name, :prompt => 'Select Customer'%><br><br>
+            <%=t.label nil, "Customer"%>
+            <%=t.text_field :name%><br><br>
         <%end%>
         <br>
         <%=f.submit "Create New PO"%>

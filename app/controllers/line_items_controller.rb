@@ -16,6 +16,14 @@ class LineItemsController < ApplicationController
         @line_item = LineItem.find(params[:id])
     end
 
+    def update 
+        @line_item = LineItem.find(params[:id])
+        @line_item.update(:quantity => line_item_params[:quantity])
+        @line_item.calculate_total
+        @purchase_order = @line_item.purchase_order
+        redirect_to purchase_order_path(@purchase_order)
+    end
+
     def destroy 
         @line_item = LineItem.find(params[:id])
         @purchase_order = @line_item.purchase_order

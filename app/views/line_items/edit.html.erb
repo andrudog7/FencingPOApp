@@ -1,8 +1,6 @@
 <%=form_for @line_item do |f|%>
-        <p><%=@line_item.item.description%></p>
-        <%=f.label "Quantity"%><%=f.text_field :quantity%>
-        <%=f.label "Notes"%>
-        <%=f.text_field :notes%>
+        <h2>Edit Item Quantity</h2>
+        <p><%=f.text_field :quantity, :size => "2px"%><%=@line_item.item.color + " " + @line_item.item.description%></p>
         <%=f.hidden_field :purchase_order_id, :value => @line_item.purchase_order_id%>
         <%=f.submit "Update PO"%>
 <%end%>
