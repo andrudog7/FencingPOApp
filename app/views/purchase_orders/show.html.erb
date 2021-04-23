@@ -19,9 +19,8 @@
             <tr>
                 <th>Quantity</th>
                 <th>Description</th>
-                <th>Notes</th>
                 <th>Rate</th>
-                <th>Line Total</th>
+                <th>Amount</th>
                 <th></th>
                 <th></th>
             </tr>
@@ -31,7 +30,6 @@
             <tr>
                 <td><%=item.quantity%></td>
                 <td><%=item.item.color%> <%=item.item.description%></td>
-                <td><%=item.notes%></td>
                 <td>$<%=item.find_item_price(item.item)%></td>
                 <td>$<%=item.line_total%></td>
                 <td><%=link_to "Edit", edit_line_item_path(item)%></td>
@@ -39,14 +37,13 @@
             </tr>
             <%end%>
             <tr class="blank_row" style="height:25px !important">
-                <td colspan="7"></td>
+                <td colspan="6"></td>
             </tr>
                 <th>Notes:</th>
                 <%=form_for(@purchase_order) do |f|%>
                     <td><%=f.text_area :notes%></td>
                     <td><%=f.submit "Save Notes"%></td>
                 <%end%>
-                <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
