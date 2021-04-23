@@ -11,7 +11,7 @@ class LineItem < ApplicationRecord
 
   def find_item_price(item)
     date = self.purchase_order.created_at
-    price_card = item.price_cards.where("date < ?", date).sort_by(&:date).last
+    price_card = item.price_cards.where("date <= ?", date).sort_by(&:date).last
     if self.purchase_order.account.name === "AAA Fence"
       price_card.aaa_price 
     else
