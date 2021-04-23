@@ -1,6 +1,9 @@
 <h1><%=@purchase_order.account.name%></h1>
 <h1>Purchase Order #<%=@purchase_order.id%></h1>
-<h2>Add Item</h2>
+<p>Date: <%=@purchase_order.created_at.strftime("%m/%d/%Y")%><br>
+    Customer: <%=@purchase_order.customer.name%><br>
+    Salesman: <%=@purchase_order.salesman.name%></p>
+<h3>Add Item</h3>
 
 <div id="category">
 <%Type.all.each do |type|%>
