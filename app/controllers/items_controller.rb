@@ -3,6 +3,11 @@ class ItemsController < ApplicationController
         @items = Item.all.sort_by(&:type)
     end
 
+    def new 
+        @item = Item.new
+        @item.price_cards.build
+    end
+
     def edit 
         @item = Item.find(params[:id])
         @price_card = PriceCard.new(item: @item)

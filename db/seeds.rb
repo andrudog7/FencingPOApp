@@ -9,20 +9,20 @@
 Type.create([{name: "PVC Sections"}, {name: "PVC Posts"}, {name: "Caps"}, {name: "Gates (walk)"}, {name: "Gates (double)"}, {name: "Insert"}, {name: "Concrete"}])
 Salesman.create([{name: "Allen Smoker"}, {name: "Andrew Smoker"}, {name: "Wesley Lapp"}])
 Item.create([
-    {type: Type.find_by(:name => "PVC Sections"), color: "white", description: "4' tall x 8' wide Deco Sections"},
-    {type: Type.find_by(:name => "PVC Sections"), color: "white", description: "4' tall x 6' wide Deco Sections"},
-    {type: Type.find_by(:name => "PVC Sections"), color: "white", description: "6' tall x 8' wide Deco Sections"},
-    {type: Type.find_by(:name => "PVC Sections"), color: "white", description: "6' tall x 6' wide Deco Sections"},
-    {type: Type.find_by(:name => "PVC Sections"), color: "tan", description: "4' tall x 8' wide Deco Sections"},
-    {type: Type.find_by(:name => "PVC Sections"), color: "tan", description: "4' tall x 6' wide Deco Sections"},
-    {type: Type.find_by(:name => "PVC Sections"), color: "tan", description: "6' tall x 8' wide Deco Sections"},
-    {type: Type.find_by(:name => "PVC Sections"), color: "tan", description: "6' tall x 6' wide Deco Sections"}
+    {type: Type.find_by(:name => "PVC Sections"), color: "White", description: "4' tall x 8' wide Deco Sections"},
+    {type: Type.find_by(:name => "PVC Sections"), color: "White", description: "4' tall x 6' wide Deco Sections"},
+    {type: Type.find_by(:name => "PVC Sections"), color: "White", description: "6' tall x 8' wide Deco Sections"},
+    {type: Type.find_by(:name => "PVC Sections"), color: "White", description: "6' tall x 6' wide Deco Sections"},
+    {type: Type.find_by(:name => "PVC Sections"), color: "Tan", description: "4' tall x 8' wide Deco Sections"},
+    {type: Type.find_by(:name => "PVC Sections"), color: "Tan", description: "4' tall x 6' wide Deco Sections"},
+    {type: Type.find_by(:name => "PVC Sections"), color: "Tan", description: "6' tall x 8' wide Deco Sections"},
+    {type: Type.find_by(:name => "PVC Sections"), color: "Tan", description: "6' tall x 6' wide Deco Sections"}
 ])
 Item.create([
-    {type: Type.find_by(:name => "PVC Posts"), color: "white", description: "end posts, 5\" x .150 x 108\""},
-    {type: Type.find_by(:name => "PVC Posts"), color: "white", description: "line posts, 5\" x .150 x 108\""},
-    {type: Type.find_by(:name => "PVC Posts"), color: "white", description: "blank posts, 5\" x .150 x 108\""},
-    {type: Type.find_by(:name => "PVC Posts"), color: "tan", description: "blank posts, 5\" x .150 x 108\""},
-    {type: Type.find_by(:name => "PVC Posts"), color: "tan", description: "end posts, 5\" x .150 x 108\""},
-    {type: Type.find_by(:name => "PVC Posts"), color: "tan", description: "line posts, 5\" x .150 x 108\""}
+    {type: Type.find_by(:name => "PVC Posts"), color: "White", description: "end posts, 5\" x .150 x 108\""},
+    {type: Type.find_by(:name => "PVC Posts"), color: "White", description: "line posts, 5\" x .150 x 108\""},
+    {type: Type.find_by(:name => "PVC Posts"), color: "White", description: "blank posts, 5\" x .150 x 108\""},
+    {type: Type.find_by(:name => "PVC Posts"), color: "Tan", description: "blank posts, 5\" x .150 x 108\""},
+    {type: Type.find_by(:name => "PVC Posts"), color: "Tan", description: "end posts, 5\" x .150 x 108\""},
+    {type: Type.find_by(:name => "PVC Posts"), color: "Tan", description: "line posts, 5\" x .150 x 108\""}
 ])

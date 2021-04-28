@@ -1,0 +1,22 @@
+<h1>Create new Item</h1>
+
+<%=form_for(@item) do |f| %>
+    <%=f.label :type%>
+    <%=f.fields_for :type, @item.type do |t|%>
+        <%=t.collection_select :id, Type.all, :id, :name, :prompt => 'Select Type'%>
+    <%end%><br>
+    <%=f.label :color%>
+    <%=f.text_field :color%><br>
+    <%=f.label :description%>
+    <%=f.text_field :description%><br><br>
+    <%=f.label nil, "Item Price Card:"%><br>
+    <%=f.fields_for :price_card, @item.price_cards.first do |p|%>
+        <%=p.date_field :date%><br>
+        <%=p.label nil, "AAA Price:  "%>
+        <%=p.text_field :aaa_price, pattern: "[0-9].[0-9][0-9]"%><br>
+        <%=p.label "Daytona Price:  "%>
+        <%=p.text_field :daytona_price, pattern: "[0-9].[0-9][0-9]"%>
+    <%end%>
+    <br>
+    <%=f.submit "Create New Item"%>
+<%end%>
