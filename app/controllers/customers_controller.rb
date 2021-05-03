@@ -6,7 +6,7 @@ class CustomersController < ApplicationController
 
     def create
         if params["commit"] === "Search"
-            @customers = Customer.where("name ~ ?", customer_params[:name])
+            @customers = Customer.where("lower(name) ~ ?", customer_params[:name].downcase)
             @customer = Customer.new
            
             render 'index'
