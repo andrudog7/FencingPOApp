@@ -8,11 +8,14 @@ class CustomersController < ApplicationController
         if params["commit"] === "Search"
             @customers = Customer.where("lower(name) ~ ?", customer_params[:name].downcase)
             @customer = Customer.new
-           
             render 'index'
         else
             render 'index'
         end
+    end
+
+    def show 
+        @customer = Customer.find(params[:id])
     end
 
     private 

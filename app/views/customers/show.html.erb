@@ -1,0 +1,7 @@
+<h1><%=@customer.name%></h1>
+<h4>Number of POs: <%=@customer.purchase_orders.count%></h4>
+
+<p><%@customer.purchase_orders.each do |p|%>
+    <%=link_to "PO ##{p.id}", purchase_order_path(p)%> - $<%=p.total%><br>
+<%end%>
+</p>
