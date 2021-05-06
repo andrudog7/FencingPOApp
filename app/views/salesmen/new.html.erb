@@ -1,0 +1,8 @@
+<h1>New Salesman</h1>
+
+<%=form_for(@salesman) do |f|%>
+    <%=f.label :name%>
+    <%=f.text_field :name%>
+    <%=f.file_field :avatar%>
+    <%=f.submit "Create New Salesman"%>
+<%end%>
