@@ -2,10 +2,17 @@
 
     <label for="salesmen">Select your name to start a new Purchase Order:</label>
     <br>
+    
     <select name="salesmen" id="salesmen">
         <%@salesmen.each do |s|%>
         <option value=<%=s.name%>><%=s.name%></option>
         <%end%>
     </select>
+        <%@salesmen.each do |s|%>
+        <%if s.avatar.attached?%>
+            <div><%=s.name%> - <%=link_to "Image", url_for(s.avatar)%></div>
+        <%end%>
+        <%end%>
     <%= button_to "Enter", :controller => "purchase_orders", :action => "new", :method => "get" %>
+
 </div>
