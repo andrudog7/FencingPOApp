@@ -10,7 +10,10 @@
     </select>
         <%@salesmen.each do |s|%>
         <%if s.avatar.attached?%>
-            <div><%=s.name%> - <%=link_to "Image", url_for(s.avatar)%></div>
+            <div><%=image_tag s.avatar, width: "100px", height: "100px"%><%=s.name%> - <%=link_to "Image", url_for(s.avatar)%></div>
+        <%end%>
+        <%if s.name === "Hello"%>
+            <%=image_tag s.avatar%>
         <%end%>
         <%end%>
     <%= button_to "Enter", :controller => "purchase_orders", :action => "new", :method => "get" %>
