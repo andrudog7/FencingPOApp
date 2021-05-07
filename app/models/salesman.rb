@@ -8,10 +8,9 @@ class Salesman < ApplicationRecord
     end
 
     def thumbnail
-        image = Image.open(self.avatar)
+        image = MiniMagick::Image.open(self.avatar)
         image.resize "100x100"
         image.format "png"
         image.write "output.png"
-        image
     end
 end
