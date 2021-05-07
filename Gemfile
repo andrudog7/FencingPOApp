@@ -26,6 +26,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'rspec-rails'
 gem "aws-sdk-s3", require: false
 gem "mini_magick"
+gem 'image_processing'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

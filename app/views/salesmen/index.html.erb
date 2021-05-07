@@ -11,6 +11,7 @@
         <%if s.avatar.attached?%>
             <%=s.thumbnail%>
             <div><%=image_tag s.avatar, width: "100px", height: "100px"%><br><%=s.name%></div>
+            <%byebug%>
         <%end%>
         <%end%>
 </div>
