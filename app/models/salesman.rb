@@ -7,6 +7,7 @@ class Salesman < ApplicationRecord
         attachable.variant :thumb, resize: "100x100"
     end
 
-    def thumbnail
+    def self.all_names
+        self.all.collect(&:name).uniq
     end
 end
