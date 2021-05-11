@@ -9,4 +9,5 @@ class PurchaseOrder < ApplicationRecord
   def total
     self.line_items.inject(0){|total, line| total + line.line_total} 
   end
+
 end
