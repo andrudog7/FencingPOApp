@@ -11,7 +11,7 @@ class Salesman < ApplicationRecord
         self.all.collect(&:name).uniq
     end
 
-    def self.group_by_customer(customer_id)
+    def self.group_by_number_of_pos_by_customer(customer_id)
         self.all.group_by{|s|s.purchase_orders.where(:customer => customer_id).count}
       end
 end
