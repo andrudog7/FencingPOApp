@@ -4,5 +4,9 @@
 @import 'variables';
 
 h3 {
-  @include primary-color;
+  color: $primary-color;
+}
+
+input[type="submit" i] {
+  border-color: $primary-color
 }
