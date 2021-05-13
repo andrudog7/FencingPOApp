@@ -12,21 +12,9 @@
  *
  *= require_tree .
  *= require_self
- */
+ *= require main*/
 
- #category a {
-    background-color: white;
-    border: 3px solid black;
-    border-color: rgb(65, 130, 187);
-    border-radius: 5px;
-    color: black;
-    padding: 6px 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
-  }
+
 #category a:hover, a:visited {
     background-color: rgb(128, 206, 255);
 }
